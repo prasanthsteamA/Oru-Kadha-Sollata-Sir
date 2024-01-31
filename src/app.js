@@ -88,5 +88,3 @@ function aDifficultChoice(choice) {
 //Seperate the strategies by a single space
 //Return the length of the complete strategy
 
-function consoleKaren(strategies){
-}
