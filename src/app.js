@@ -87,4 +87,3 @@ function aDifficultChoice(choice) {
 //Take all of Lily's strategies and concatenate them to a single var
 //Seperate the strategies by a single space
 //Return the length of the complete strategy
-
