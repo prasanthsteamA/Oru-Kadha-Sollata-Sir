@@ -3,9 +3,9 @@
 //Debug the type of data provided
 //Return the types concatenated in a single variable
 function moreAboutHome(address,distanceFromTown, hasNeighbours){
-    let typeOfAddress = typeof address;
-    let typeOfDistance = typeof distanceFromTown;
-    let typeOfNeighbours = typeof hasNeighbours;
+    const typeOfAddress = typeof address;
+    const typeOfDistance = typeof distanceFromTown;
+    const typeOfNeighbours = typeof hasNeighbours;
 
     return (typeOfAddress+typeOfDistance+typeOfNeighbours);
 
@@ -15,11 +15,8 @@ function moreAboutHome(address,distanceFromTown, hasNeighbours){
 //Check if the data given is of the right type
 //parents = String, noOfSiblings = Number, isNuclearFamily = Boolean
 function moreAboutKaren(parents, noOfSiblings, isNuclearFamily){
-    let isParents=typeof parents === "string";
-    let isnoofSiblings=typeof noOfSiblings ==="number";
-    let IsisNuclearFamily=typeof isNuclearFamily === "boolean";
+   return typeof parents === "string" && typeof noOfSiblings ==="number" && typeof isNuclearFamily === "boolean";
 
-    return isParents && isnoofSiblings &&IsisNuclearFamily;
 }
 
 //Progression 3:
@@ -35,32 +32,25 @@ function doesFriendExist(ageInText, ageInNumber){
 //On her way to the river, she ate another z sweets every n meters travelled
 //Her friend divided the remaining sweets into 2 parts for each
 //How many sweets did her friend get to eat?
-function sweetTooth(totalNoOfSweets, sweetsConsumedByKaren, sweetsConsumedInNMeters, metersToTravel){
-    if(
-        typeof (totalNoOfSweets) !== 'number' ||
-        typeof (sweetsConsumedByKaren) !== 'number' ||
-        typeof (sweetsConsumedInNMeters) !== 'number' || 
-        typeof (metersToTravel) !== 'number'
-    ){
-        return "No sweets for Karen's friend";
-    }
-    if(arguments.length === 0){
-        return "No sweets for Karen's friend";
-    }
-    if(totalNoOfSweets === 0 && sweetsConsumedByKaren === 0 && sweetsConsumedInNMeters === 0 && metersToTravel === 0){
-        return 0;
-    }
-    const totalSweetsConsumedByKaren = sweetsConsumedByKaren + (sweetsConsumedInNMeters * (metersToTravel / 100));
+function sweetTooth(totalNoOfSweets, sweetsConsumedByKaren, sweetsConsumedInNMeters, metersToTravel) {
+    switch (true) {
+        case (
+            typeof totalNoOfSweets !== 'number' ||
+            typeof sweetsConsumedByKaren !== 'number' ||
+            typeof sweetsConsumedInNMeters !== 'number' ||
+            typeof metersToTravel !== 'number'
+        ):
+            return "No sweets for Karen's friend";
 
-    if (totalSweetsConsumedByKaren <= totalNoOfSweets) {
-        return 0;
+        case totalNoOfSweets === 0 && sweetsConsumedByKaren === 0 && sweetsConsumedInNMeters === 0 && metersToTravel === 0:
+            return 0;
+
+        default:
+            const totalSweetsConsumedByKaren = sweetsConsumedByKaren + sweetsConsumedInNMeters * (metersToTravel / 100);
+            return totalSweetsConsumedByKaren <= totalNoOfSweets ? 0 : "No sweets for Karen's friend";
     }
-    
-    let SweetsForFriend = (totalNoOfSweets - totalSweetsConsumedByKaren) / 2;
-
-    return SweetsForFriend > 0? SweetsForFriend/2:0;
-
 }
+
 
 //Progression 5:
 //As Lily moves closer, it gets colder. She checks the temperature on her mobile
