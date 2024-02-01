@@ -84,6 +84,8 @@ function aDifficultChoice(choice){
             return "Wasn't able to decide";
         case 'I give up':
             return "Refused to do anything for Karen";
+        default:
+                return "No choice found"
     }
 }
 
