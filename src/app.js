@@ -12,9 +12,9 @@ function moreAboutHome(address, distanceFromTown, hasNeighbours) {
 //parents = String, noOfSiblings = Number, isNuclearFamily = Boolean
 function moreAboutKaren(parents, noOfSiblings, isNuclearFamily) {
   return (
-    typeof parents == "string" &&
-    typeof noOfSiblings == "number" &&
-    typeof isNuclearFamily == "boolean"
+    typeof parents === "string" &&
+    typeof noOfSiblings === "number" &&
+    typeof isNuclearFamily === "boolean"
   );
 }
 
@@ -76,6 +76,8 @@ function aDifficultChoice(choice) {
       return "Wasn't able to decide";
     case 'I give up':
       return "Refused to do anything for Karen";
+    default:
+      return;
   }
 }
 
