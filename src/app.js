@@ -2,15 +2,35 @@
 //We've got some basic info about Karen's home
 //Debug the type of data provided
 //Return the types concatenated in a single variable
-
+function moreAboutHome(address, distanceFromTown, hasNeighbours) {
+    return typeof(address) +  typeof(distanceFromTown) +  typeof(hasNeighbours);
+    
+}
 //Progression 2:
 //Check if the data given is of the right type
 //parents = String, noOfSiblings = Number, isNuclearFamily = Boolean
+function moreAboutKaren(str, num, bool) {
+    if (typeof(str) === 'string' && typeof(num) === 'number' && typeof(bool) === 'boolean') {
+        return true;
+    }
+    return false;
+}
 
 //Progression 3:
 //Lily is suspicious about Karen's new friend
 //Karen tells her friend's age and even writes it down
 //Check which one those is not a number (NaN) and return that value
+function doesFriendExist(karenAge, friendAge) {
+    switch(true){
+        case isNaN(karenAge):
+            return karenAge;
+        case isNaN(friendAge):
+            return friendAge;
+        default:
+            return "Both ages are numbers";
+    }
+}
+
 
 //Progression 4:
 //Lily gave Karen x sweets
@@ -18,10 +38,34 @@
 //On her way to the river, she ate another z sweets every n meters travelled
 //Her friend divided the remaining sweets into 2 parts for each
 //How many sweets did her friend get to eat?
+function sweetTooth(sweets,riverDistance,friendSpeed){
+    switch(true){
+        case typeof(sweets)!='number' || typeof(riverDistance)!='number' || typeof(friendSpeed)!='number':
+            return "No sweets for Karen's friend";
+        case sweets==0 && riverDistance==0 && friendSpeed==0:
+            return 0;
+        default:
+            const karanAte=sweets;
+            const remSweets=sweets -karanAte- Math.floor(riverDistance / friendSpeed);
+            if (remSweets <= 0) {
+                return 0;
+            }
+            const friendAte = Math.floor(remSweets / 2);
+            return friendAte;
+        }
+}
 
 //Progression 5:
 //As Lily moves closer, it gets colder. She checks the temperature on her mobile
 //It only shows in fahrenheit. Convert the data to celsius and return it.
+function convertToCelsius(temperature){
+    switch(true){
+        case typeof(temperature)!='number':
+            return 'Technical Error!';
+        default:
+            return (temperature - 32) * 5 / 9;
+    }
+}
 
 //Progression 6:
 //Lily can now do multiple things to deal with this
@@ -30,6 +74,20 @@
 //3. Counsel her daughter herself
 //4. Lock her daughter in her room
 //Given a value, return which of these above actions Lily would take
+function aDifficultChoice(choice){
+    switch (choice) {
+        case 1:
+            return "Take her daughter to a doctor";
+        case -1:
+            return "Break down and give up all hope";
+        case undefined:
+            return "Wasn't able to decide";
+        case 'I give up':
+            return "Refused to do anything for Karen";
+        default:
+                return "No choice found"
+    }
+}
 
 //Progression 7:
 //Lily realized that she'd hurt her daughter
