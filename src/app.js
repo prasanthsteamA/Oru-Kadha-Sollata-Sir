@@ -7,18 +7,15 @@ function moreAboutHome(address,distanceFromTown,hasNeighbours){
     return result;
 
 }
-
-
-
+ 
 //Progression 2:
 //Check if the data given is of the right type
 //parents = String, noOfSiblings = Number, isNuclearFamily = Boolean
 
 function moreAboutKaren(parents,noOfSiblings,isNuclearFamily){
-    return typeof parents=='string' && typeof noOfSiblings=='number' && typeof isNuclearFamily=='boolean';  
+    return typeof parents==='string' && typeof noOfSiblings==='number' && typeof isNuclearFamily==='boolean';  
 
 }
-
 
 //Progression 3:
 //Lily is suspicious about Karen's new friend
@@ -26,19 +23,8 @@ function moreAboutKaren(parents,noOfSiblings,isNuclearFamily){
 //Check which one those is not a number (NaN) and return that value
 
 function doesFriendExist(ageInText,ageInNumber){
-    if(isNaN(ageInText)){
-        return ageInText
-    }
-    else if(isNaN(ageInNumber)){
-        return ageInNumber
-    }
-    else{
-        return 0;
-    }
-
+    return isNaN(ageInText)?ageInText : isNaN(ageInNumber)?ageInNumber : 0;
 }
-
-
 
 //Progression 4:
 //Lily gave Karen x sweets
@@ -50,12 +36,8 @@ function sweetTooth(totalNoOfSweets,sweetsConsumedByKaren,sweetsConsumedInNMeter
     if(isNaN(totalNoOfSweets)||isNaN(sweetsConsumedByKaren)||isNaN(sweetsConsumedInNMeters)||isNaN(metersToTravel)||arguments.length==0){
         return "No sweets for Karen's friend"
     }
-    let availableSweets = totalNoOfSweets - (sweetsConsumedByKaren+(sweetsConsumedInNMeters*metersToTravel));
-    return availableSweets/2;
-   
+    return availableSweets = (totalNoOfSweets - (sweetsConsumedByKaren+(sweetsConsumedInNMeters*metersToTravel)))/2;
 }
-
-
 //Progression 5:
 //As Lily moves closer, it gets colder. She checks the temperature on her mobile
 //It only shows in fahrenheit. Convert the data to celsius and return it.
@@ -90,8 +72,8 @@ function aDifficultChoice(choice){
             return "Break down and give up all hope"
         case "I give up":
             return "Refused to do anything for Karen";
-        
-
+        default:
+            "No other choices"
         }
         
 }
